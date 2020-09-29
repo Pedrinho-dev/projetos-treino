@@ -1,5 +1,5 @@
 class Controller {
-    constructor () {
+    constructor() {
         this.ManagerList = new ManagerList()
     }
 

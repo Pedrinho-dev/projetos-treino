@@ -1,5 +1,5 @@
 class ManagerList {
-    constructor(){
+    constructor() {
         this.arrPendente = [];
         this.arrFazendo = [];
         this.arrConcluido = [];
@@ -39,8 +39,9 @@ class ManagerList {
     }
     
 
-    pendentes(){
+    pendentes() {
         let listaHTML = "";
+
         for(let i=0; i<this.arrPendente.length; i++){
             listaHTML += `
             <div> 
@@ -69,6 +70,7 @@ class ManagerList {
             `
         } 
         return listaHTML;
-    }
-    
+    }    
+
+
 }
