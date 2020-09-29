@@ -25,18 +25,17 @@
 </head>
 
 <body>
-    <center>
+    <div class="container">
         <div>
             <h2>To Do List</h2>
             <input id='data' type='date'>
             <input id="tarefa" type="text" placeholder="Digite uma Tarefa" />
             <input id='desc' type="text" placeholder="Descrição da Terefa">
             <button onclick="controller.add()">Adicionar</button>
-            
+
         </div>
         <br>
-        <div class="grid-container">
-
+        <div class="row row-cols-3">
             <div>
                 <h3>Pendente</h3>
                 <hr>
@@ -53,8 +52,8 @@
             <div id="c2"></div>
             <div id="c3"></div>
             <div id="c4"></div>
-
         </div>
+    </div>
 </body>
 
 </html>
