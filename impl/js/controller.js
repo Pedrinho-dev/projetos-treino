@@ -1,16 +1,16 @@
 class Controller {
-    constructor () {
+    constructor() {
         this.ManagerList = new ManagerList()
     }
 
-    lerDados () {
+    lerDados() {
         let data = document.getElementById('data').value
         let tarefa = document.getElementById('tarefa').value
         let descricao = document.getElementById('desc').value
         return new ToDoList(data, tarefa, descricao)
     }
 
-    add(){
+    add() {
         let dados = this.lerDados()
         this.ManagerList.popularArray(dados);
         let pendente = this.ManagerList.pendentes()
