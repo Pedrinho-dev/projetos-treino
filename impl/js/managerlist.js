@@ -17,4 +17,8 @@ class ManagerList {
             Descrição: ${this.arrPendente[i].descricao} </div>`
         } return listaHTML;
     }
+
+    fazendo() {
+        
+    }
 }

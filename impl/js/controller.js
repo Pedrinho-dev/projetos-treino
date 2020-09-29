@@ -14,7 +14,7 @@ class Controller {
         let dados = this.lerDados()
         this.ManagerList.popularArray(dados);
         let pendente = this.ManagerList.pendentes()
-        document.getElementById("c2").innerHTML = pendente
+        document.getElementById("resultPend").innerHTML = pendente
     }
 }
 
