@@ -28,9 +28,9 @@ class ManagerList {
         var removido = arrRemove.splice(indece,1);
     }
 
-    getTarefaPendente(descricao){
+    getTarefa(descricao,arr){
         let tarefa = {};
-        this.arrPendente.forEach(objTarefa => {
+        arr.forEach(objTarefa => {
             if(objTarefa.descricao==descricao){
                 tarefa = objTarefa;
             }
@@ -64,13 +64,29 @@ class ManagerList {
                 Data: ${this.arrFazendo[i].data} </br>
                 Tarefa: ${this.arrFazendo[i].tarefa} </br>
                 Descrição: ${this.arrFazendo[i].descricao} 
-                <button onclick="">>></button>
+                <button onclick="controller.concluido('${this.arrFazendo[i].descricao}')">>></button>
             </div>
             <hr>
             `
         } 
         return listaHTML;
     }    
+
+    concluido(){
+        let listaHTML = "";        
+        for(let i=0; i<this.arrConcluido.length; i++){
+            listaHTML += `
+            <div> 
+                Data: ${this.arrConcluido[i].data} </br>
+                Tarefa: ${this.arrConcluido[i].tarefa} </br>
+                Descrição: ${this.arrConcluido[i].descricao} 
+                
+            </div>
+            <hr>
+            `
+        } 
+        return listaHTML;
+    }  
 
 
 }

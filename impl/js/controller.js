@@ -16,8 +16,7 @@ class Controller {
         document.getElementById('desc').value="";
     }
 
-    add(){
-        
+    add(){        
         let dados = this.lerDados()
         if (dados.data=="" || dados.tarefa=="" || dados.descricao=="") {
             alert("Todos os dados são obrigatórios");
@@ -28,11 +27,20 @@ class Controller {
         this.limparCampos();
 
     }
-    fazendo(descricao){        
-        let ObjTarefa = this.ManagerList.getTarefaPendente(descricao);
-        this.ManagerList.popularArray(ObjTarefa,"fazendo");
-        let arrPendente = this.ManagerList.arrPendente;
+    fazendo(descricao){  
+        let arrPendente = this.ManagerList.arrPendente;      
+        let ObjTarefa = this.ManagerList.getTarefa(descricao,arrPendente);
+        this.ManagerList.popularArray(ObjTarefa,"fazendo");        
         this.ManagerList.removerTarefa(descricao,arrPendente);
+        this.atualizaTarefas();
+         
+    }
+
+    concluido(descricao){   
+        let arrFazendo = this.ManagerList.arrFazendo;     
+        let ObjTarefa = this.ManagerList.getTarefa(descricao,arrFazendo);
+        this.ManagerList.popularArray(ObjTarefa,"concluido");       
+        this.ManagerList.removerTarefa(descricao,arrFazendo);
         this.atualizaTarefas();
          
     }
@@ -44,6 +52,10 @@ class Controller {
         //Atualiza a Div Fazendo
         let strFazendo = this.ManagerList.fazendo();
         document.getElementById("c3").innerHTML = strFazendo;
+
+        //Atualiza a Div Concluido
+        let strConcluido = this.ManagerList.concluido();
+        document.getElementById("c4").innerHTML = strConcluido;
     }
 }
 
